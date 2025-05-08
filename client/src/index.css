@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --primary: 196 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --accent: 340 82% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --ring: 196 90% 54%;
+  --radius: 0.5rem;
+  
+  /* React colors */
+  --reactBlue: 196 90% 54%;
+  --reactDark: 222 14% 18%;
+}
+
+.theme-light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --sidebar-background: #f5f5f5;
+  --sidebar-foreground: #333333;
+  --sidebar-border: #e0e0e0;
+}
+
+.theme-dark {
+  --bg-primary: #282C34;
+  --bg-secondary: #21252b;
+  --text-primary: #eeeeee;
+  --text-secondary: #a0a0a0;
+  --border-color: #3e4451;
+  --sidebar-background: #21252b;
+  --sidebar-foreground: #eeeeee;
+  --sidebar-border: #3e4451;
+}
+
+.dark {
+  --background: 222 14% 18%;
+  --foreground: 0 0% 98%;
+  --card: 222 14% 18%;
+  --card-foreground: 0 0% 98%;
+  --popover: 222 14% 18%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 196 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 340 82% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 196 90% 54%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-inter bg-[var(--bg-primary)] text-[var(--text-primary)];
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+}
+
+.code-editor {
+  font-family: 'Fira Code', monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+}
+
+/* Syntax highlighting styles for prism */
+.code-editor .token.comment,
+.code-editor .token.prolog,
+.code-editor .token.doctype,
+.code-editor .token.cdata {
+  color: #6a9955;
+}
+
+.code-editor .token.punctuation {
+  color: #d4d4d4;
+}
+
+.code-editor .token.property,
+.code-editor .token.tag,
+.code-editor .token.boolean,
+.code-editor .token.number,
+.code-editor .token.constant,
+.code-editor .token.symbol {
+  color: #b5cea8;
+}
+
+.code-editor .token.selector,
+.code-editor .token.attr-name,
+.code-editor .token.string,
+.code-editor .token.char,
+.code-editor .token.builtin {
+  color: #ce9178;
+}
+
+.code-editor .token.operator,
+.code-editor .token.entity,
+.code-editor .token.url,
+.code-editor .language-css .token.string,
+.code-editor .style .token.string {
+  color: #d4d4d4;
+}
+
+.code-editor .token.atrule,
+.code-editor .token.attr-value,
+.code-editor .token.keyword {
+  color: #569cd6;
+}
+
+.code-editor .token.function,
+.code-editor .token.class-name {
+  color: #dcdcaa;
+}
+
+.code-editor .token.regex,
+.code-editor .token.important,
+.code-editor .token.variable {
+  color: #9cdcfe;
+}
+
+.code-editor .token.important,
+.code-editor .token.bold {
+  font-weight: bold;
+}
+
+.code-editor .token.italic {
+  font-style: italic;
+}
+
+.code-editor .token.entity {
+  cursor: help;
+}
+
+/* Line numbers */
+.code-editor-line-number {
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+  margin-right: 1em;
+  color: #6c8ebf;
+  opacity: 0.5;
+}
+
+/* File type indicators */
+.file-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.file-icon-js {
+  background-color: #f1e05a;
+}
+
+.file-icon-jsx {
+  background-color: #61dafb;
+}
+
+.file-icon-ts {
+  background-color: #007acc;
+}
+
+.file-icon-tsx {
+  background-color: #007acc;
+}
+
+/* Console output styling */
+.console-output {
+  font-family: 'Fira Code', monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.console-output .log-prefix {
+  color: #6c757d;
+  margin-right: 8px;
+}
+
+.console-output .log-string {
+  color: #ce9178;
+}
+
+.console-output .log-number {
+  color: #b5cea8;
+}
+
+.console-output .log-boolean {
+  color: #569cd6;
+}
+
+.console-output .log-error {
+  color: #f44336;
+}
+
+.sidebar-active {
+  background-color: rgba(97, 218, 251, 0.1);
+  border-left: 3px solid #61DAFB;
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-code {
+    font-family: 'Fira Code', monospace;
+  }
+}
+/* macOS-style custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* Dark mode scrollbar */
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.theme-dark * {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
