@@ -378,7 +378,7 @@ const TopicPage = () => {
                 </Button>
                 {showHint && (
                   <Typography variant="body2" sx={{ mt: 1, color: '#888' }}>
-                    Hint Feature abhi aaya nahi hai!
+                    Hint Feature jald hi aayega!
                   </Typography>
                 )}
                 <Button
